@@ -1,0 +1,55 @@
+[tool.poetry]
+name = "python-bitbankcc-ios-shortcuts"
+version = "0.1.0"
+description = "This repository is intended for handling the Public & Private APIs of https://bitbank.cc/ using the python-bitbankcc library within iOS Shortcuts."
+authors = ["7rikaz_h785 <7rikaz.h785.stat2ltas41lcijad@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "python_bitbankcc_ios_shortcuts"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+python-dotenv = "^1.0.0"
+python-bitbankcc = {git = "https://github.com/bitbankinc/python-bitbankcc.git", rev = "master"}
+requests = "^2.31.0"
+mdformat = "^0.7.16"
+
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^6.0.0"
+black = "^23.3.0"
+isort = "^5.12.0"
+mypy = "^1.3.0"
+pytest = "^7.3.2"
+taskipy = "^1.11.0"
+flake8-pyproject = "^1.2.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+bbstest = "pytest -s -vv --cov=. --cov-branch --cov-report term-missing --cov-report html"
+isort = "poetry run isort src tests"
+black = "poetry run black src tests"
+flake8 = "poetry run flake8 src tests"
+mypy = "poetry run mypy"
+
+[tool.black]
+target-version = ['py310']
+
+[tool.isort]
+
+[tool.flake8]
+ignore = ["E402","E501","W503"]
+
+[tool.mypy]
+files = ["src","tests"]
+python_version = "3.10"
+strict = true
+warn_return_any = false
+ignore_missing_imports = true
+scripts_are_modules = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests",]

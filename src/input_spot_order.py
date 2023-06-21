@@ -2,14 +2,16 @@ import datetime
 import json
 import os
 import sys
-from typing import Dict, List, Tuple, Union
+from typing import Dict, List, Optional, Tuple, Union
 
 from dotenv import load_dotenv
 from python_bitbankcc import private, public
 
 
 class UseBitbankApi:
-    def __init__(self) -> None:
+    def __init__(
+        self, api_key: Optional[str] = None, api_secret: Optional[str] = None
+    ) -> None:
         """UseBitbankApiのインスタンスを初期化します。
 
         publicクラスとprivateクラスのインスタンスを作成する
@@ -19,7 +21,7 @@ class UseBitbankApi:
             None
 
         Raises:
-            SystemExit: コマンドライン引数の数が無効な場合
+            ValueError: コマンドライン引数の数が無効な場合
 
         Returns:
             None
@@ -35,17 +37,25 @@ class UseBitbankApi:
         if len(self._args) == 1:
             self._adjust_order_num: int = 500
         elif len(self._args) > 2:
-            print("価格は一つのみ指定してください")
-            sys.exit()
+            raise ValueError("価格は一つのみ指定してください")
         else:
             self._adjust_order_num = int(self._args[1])
 
-        self._adjust_price: int = 5000
+        self._adjust_price: int = 50000
         self._decimal_digits_btc: int = 8
 
-        load_dotenv()
-        self._api_key: str = os.environ["API_KEY"]
-        self._api_secret: str = os.environ["API_SECRET"]
+        if api_key is not None and api_secret is not None:
+            self._api_key = api_key
+            self._api_secret = api_secret
+        else:
+            load_dotenv()
+            self._api_key = os.environ["API_KEY"]
+            self._api_secret = os.environ["API_SECRET"]
+
+        if not self._api_key or not self._api_secret:
+            raise FileNotFoundError(
+                "API_KEY or API_SECRET is missing in the environment variables"
+            )
 
         self._pub: public = public()
 
@@ -203,7 +213,7 @@ class UseBitbankApi:
             f.write(data)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     """スポットオーダーの処理を実行して結果をファイルに書き込む。
 
     スポットオーダーを実行し、APIのレスポンスを取得します。

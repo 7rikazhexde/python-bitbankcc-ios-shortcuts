@@ -85,7 +85,7 @@ def test_set_order_data() -> None:
 
 
 def test_spot_order() -> None:
-    """指値注文時のresponse(型)をのテストコード
+    """指値注文時のresponse(型)を確認するテストコード
 
     Args:
         None

@@ -41,7 +41,7 @@ class UseBitbankApi:
         else:
             self._adjust_order_num = int(self._args[1])
 
-        self._adjust_price: int = 50000
+        self._adjust_price: int = 0
         self._decimal_digits_btc: int = 8
 
         if api_key is not None and api_secret is not None:
@@ -151,6 +151,7 @@ class UseBitbankApi:
             - 注文はティッカーパターンと取引ペアに基づいて行われます。
             - 注文の実行結果は辞書形式で返されます。
             - 注文情報やステータスなど、注文に関する詳細が含まれます。
+            - 指値注文ではPost Only指定で注文します。
 
         """
         order_num, order_price = self.set_order_data(ticker_ptn, pair)

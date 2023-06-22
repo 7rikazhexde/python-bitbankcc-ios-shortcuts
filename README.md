@@ -4,7 +4,7 @@ This repository is intended for handling the Public &amp; Private APIs of https:
 # 🚨 Notes
 - This code does not necessarily guarantee that the expected data will be obtained.
 
-- Please use this code at your own risk, as we are not responsible for any damages incurred by executing or referring to this code.
+- Please use this code at your own risk, as I'm not responsible for any damages incurred by executing or referring to this code.
 
 - This code executes a limit order, but the price specified depends on the minimum order quantity. Please note that if the specified order price is less than the minimum order quantity by calculation, the order volume may be less than the specified order price.
 
@@ -14,21 +14,31 @@ This repository is intended for handling the Public &amp; Private APIs of https:
 
 # Usage
 
+## For iOS Shortcuts
+
+To be filled in at a later date.
+
 ## For Python virtualenv
 
 > 🚨 **Note:**<br />
 > **The following procedure requires a Python virtualenv (e.g., venv, pyenv-virtualenv) environment.**
 
+### project clone
+
+```bash
+git clone https://github.com/7rikazhexde/python-bitbankcc-ios-shortcuts.git
+```
+
 ### Execution grant
 
 ```
-chmod +x setup_config.sh setup_for_pyenv_virtualenv.sh
+chmod +x setup_config.sh setup_bbapi.sh
 ```
 
 ### Install packages and build environment
 
 ```
-./setup_for_pyenv_virtualenv.sh
+./setup_bbapi.sh
 ```
 
 ### Order
@@ -46,10 +56,16 @@ python input_spot_order.py
 > **The following procedure requires the installation of poetry.**
 > **For Poetry installation, [check the official website](https://python-poetry.org/docs/#installing-with-the-official-installer).**
 
+### project clone
+
+```bash
+git clone https://github.com/7rikazhexde/python-bitbankcc-ios-shortcuts.git
+```
+
 ### Execution grant
 
 ```
-chmod +x setup_config.sh setup_for_poetry_venv.sh
+chmod +x setup_config.sh setup_bbapi_for_poetry.sh
 ```
 
 ### Install packages and build environment
@@ -57,7 +73,7 @@ chmod +x setup_config.sh setup_for_poetry_venv.sh
 Execute `poetry install --no-root` with the following shell script.
 
 ```
-./setup_for_poetry_venv.sh
+./setup_bbapi_for_poetry.sh
 ```
 
 To install packages for the development environment, do the following
@@ -74,7 +90,3 @@ Execute the following to place a limit order for btc_jpy at a specified price us
 cd src
 python input_spot_order.py
 ```
-
-## For iOS Shortcuts
-
-To be filled in at a later date.

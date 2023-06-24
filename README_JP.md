@@ -86,13 +86,13 @@ git clone https://github.com/7rikazhexde/python-bitbankcc-ios-shortcuts.git
 
 ### 2️⃣ 実行権限付与
 
-```
+```bash
 chmod +x setup_config.sh setup_bbapi.sh
 ```
 
 ### 3️⃣ パッケージのインストールとビルド環境の構築
 
-```
+```bash
 ./setup_bbapi.sh
 ```
 
@@ -100,7 +100,7 @@ chmod +x setup_config.sh setup_bbapi.sh
 
 ビットバンクAPIを使用して、指定価格でbtc_jpyの指値注文を発注するために以下を実行します。
 
-```
+```bash
 cd src
 python input_spot_order.py
 ```
@@ -119,7 +119,7 @@ git clone https://github.com/7rikazhexde/python-bitbankcc-ios-shortcuts.git
 
 ### 2️⃣ 実行権限付与
 
-```
+```bash
 chmod +x setup_config.sh setup_bbapi_for_poetry.sh
 ```
 
@@ -127,13 +127,13 @@ chmod +x setup_config.sh setup_bbapi_for_poetry.sh
 
 以下のシェルスクリプトで `poetry install --no-root` を実行する。
 
-```
+```bash
 ./setup_bbapi_for_poetry.sh
 ```
 
 開発環境用のパッケージをインストールするには、以下を実行する。
 
-```
+```bash
 poetry install
 ```
 
@@ -143,7 +143,7 @@ poetry install
 
 以下の指定では5000円分指値注文を出します。
 
-```
+```bash
 cd src
-python input_spot_order.py [500]
+python input_spot_order.py 5000
 ```

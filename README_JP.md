@@ -43,6 +43,7 @@
 ## iOS Shortcutsアプリ向け
 
 > 🚨 **Note:**<br />
+> **[a-Shellアプリ](https://apps.apple.com/us/app/a-shell/id1473805438?uo=4)のインストールが必要です。**
 > **以下のショートカットはiPhoneとiPadにのみ対応しています。**
 > **Mac/Windows/Linuxの場合は、以下の[For Python virtualenv](#for-python-virtualenv) または [For poetry](#for-poetry)を参照してください。**
 

@@ -43,6 +43,7 @@ This repository is intended for handling the Public & Private APIs of https://bi
 ## For iOS Shortcuts App
 
 > 🚨 **Note:**<br />
+> **Installation of the [a-Shell](https://apps.apple.com/us/app/a-shell/id1473805438?uo=4) is required.**
 > **The following shortcuts are for iPhone and iPad only; for Mac/Windows/Linux, see [For Python virtualenv](#for-python-virtualenv) or [For poetry](#for-poetry) below.**
 
 ### 1️⃣ setup

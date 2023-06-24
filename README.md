@@ -85,13 +85,13 @@ git clone https://github.com/7rikazhexde/python-bitbankcc-ios-shortcuts.git
 
 ### 2️⃣ Execution grant
 
-```
+```bash
 chmod +x setup_config.sh setup_bbapi.sh
 ```
 
 ### 3️⃣ Install packages and build environment
 
-```
+```bash
 ./setup_bbapi.sh
 ```
 
@@ -99,7 +99,7 @@ chmod +x setup_config.sh setup_bbapi.sh
 
 Execute the following to place a limit order for btc_jpy at a specified price using bitbank API
 
-```
+```bash
 cd src
 python input_spot_order.py
 ```
@@ -118,7 +118,7 @@ git clone https://github.com/7rikazhexde/python-bitbankcc-ios-shortcuts.git
 
 ### 2️⃣ Execution grant
 
-```
+```bash
 chmod +x setup_config.sh setup_bbapi_for_poetry.sh
 ```
 
@@ -126,13 +126,13 @@ chmod +x setup_config.sh setup_bbapi_for_poetry.sh
 
 Execute `poetry install --no-root` with the following shell script.
 
-```
+```bash
 ./setup_bbapi_for_poetry.sh
 ```
 
 To install packages for the development environment, do the following
 
-```
+```bash
 poetry install
 ```
 
@@ -142,7 +142,7 @@ Execute the following to place a limit order for btc_jpy at a specified price us
 
 The following designation places a limit order for 5,000 JPY yen.
 
-```
+```bash
 cd src
-python input_spot_order.py [500]
+python input_spot_order.py 5000
 ```

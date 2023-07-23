@@ -1,11 +1,10 @@
 [tool.poetry]
 name = "python-bitbankcc-ios-shortcuts"
-version = "0.1.2"
+version = "0.1.3"
 description = "This repository is intended for handling the Public & Private APIs of https://bitbank.cc/ using the python-bitbankcc library within iOS Shortcuts."
 authors = ["7rikaz_h785 <7rikaz.h785.stat2ltas41lcijad@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "python_bitbankcc_ios_shortcuts"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
